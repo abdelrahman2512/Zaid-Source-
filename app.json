@@ -1,0 +1,64 @@
+{
+    "name": "Yukki-Music Old",
+    "logo": "https://telegra.ph/file/e17ae80eefd44ab387aaf.jpg",
+    "description": "Telegram Bot for streaming music trough the Telegram Group video chat feature.",
+    "keywords": ["music", "py-tgcalls", "pyrogram", "telegram"],
+    "repository": "https://github.com/levina-lab/YukkiMusic-Old",
+    "stack": "container",
+    "env": {
+        "SESSION_NAME": {
+            "description": "fill with the pyrogram session string",
+            "required": true
+        },
+        "OWNER_ID": {
+            "description": "fill with your telegram id as the owner of the bot",
+            "required": true
+        },
+        "ASS_ID": {
+            "description": "fill with the telegram id of account you used for the assistant/userbot",
+            "required": true
+        },
+        "LOG_GROUP_ID": {
+            "description": "create a private group and get the group id and fill the group id here, Then add the assistant and bot as admin to the group",
+            "required": true
+        },
+        "API_ID": {
+            "description": "your Api ID from my.telegram.org/apps",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "your Api Hash from my.telegram.org/apps",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "fill with the id of user who can access the sudo feature in your bot (for multiple IDs separate with space)",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "fill with your bot token get from @BotFather on telegram",
+            "required": true
+        },
+        "MONGO_DB_URI": {
+            "description": "fill with the mongodb url (this is needed for the database). Get it from mongodb.cloud.com",
+            "required": true
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
