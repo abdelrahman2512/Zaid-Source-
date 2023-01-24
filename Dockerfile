@@ -1,10 +1,19 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs18
+FROM ubuntu:latest
 
-RUN apt-get install -y --no-install-recommends ffmpeg \
+RUN apt-get update -y
 
-COPY . /app/
-WORKDIR /app/
+RUN apt install python3-pip -y
 
-RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
+RUN apt install ffmpeg -y
 
-CMD python3 -m Yukki
+RUN apt-get install flac
+
+RUN mkdir /app
+
+WORKDIR /app
+
+ADD . .
+
+RUN pip install -r requirements.txt
+
+CMD bash start
