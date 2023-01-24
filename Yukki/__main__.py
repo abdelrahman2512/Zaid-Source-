@@ -18,7 +18,7 @@ Client(
     API_ID,
     API_HASH,
     bot_token=BOT_TOKEN,
-    plugins={'root': 'Yukki.Plugins'},
+    plugins=dict(root='Yukki.plugins')
 ).start()
 
 print(f"[ INFO ] BOT STARTED AS {BOT_NAME} !")
