@@ -1,9 +1,6 @@
 FROM nikolaik/python-nodejs:python3.10-nodejs18
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-   
+RUN apt-get install -y --no-install-recommends ffmpeg \
 
 COPY . /app/
 WORKDIR /app/
