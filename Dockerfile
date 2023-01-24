@@ -16,4 +16,4 @@ ADD . .
 
 RUN pip install -r requirements.txt
 
-CMD bash start
+CMD python3 -m Yukki
