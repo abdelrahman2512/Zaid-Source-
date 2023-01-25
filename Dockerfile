@@ -1,12 +1,14 @@
 FROM nikolaik/python-nodejs:python3.9-nodejs18
 
-RUN apt-get update -y && apt-get upgrade -y \
+RUN apt-get update -y
 
-    && apt-get install -y --no-install-recommends ffmpeg \
+RUN apt-get upgrade -y
 
-    && apt-get clean \
+RUN apt-get install -y --no-install-recommends ffmpeg
 
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get clean
+
+RUN rm -rf /var/lib/apt/lists/*
 
 COPY . /app/
 
